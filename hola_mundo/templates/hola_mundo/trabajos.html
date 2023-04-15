@@ -1,0 +1,27 @@
+{% extends './base.html'%}
+
+{% block titulo %} Listado de Trabajos {% endblock %}
+
+{%block listado%}
+<form>
+    <p>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" maxlength="100" required="" id=""criterio_nombre">
+
+    
+</form>
+<form action={% url 'trabajos' %} method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Guardar">
+</form>
+<ul>
+    {% for trabajo in trabajos %}
+        <li> {{trabajo}}</li>
+    {% endfor %} 
+
+</ul>
+{% endblock %}
+
+{% block title %} Total: {{total_trabajos}} {% endblock %}
+

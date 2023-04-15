@@ -1,0 +1,22 @@
+<form action"/hola-mundo/buscar/" method="GET">
+
+    <input type="tarea" name ="tarea" id="tarea">
+    
+    <input type="submit" value="Buscar">
+    
+    
+
+</form>
+
+<p>Estamos buscando la: {{tareas}}</p>
+
+{% if cursos %} 
+
+<ul>
+{% for curso in cursos %} 
+    <li> {{tarea.nombre}} </li>
+    <li> {{tarea.tareas}}</li>
+{% endfor % } 
+</ul>
+
+{% endif %} 
